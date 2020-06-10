@@ -6,6 +6,11 @@ class Counter extends Component {
         tags : ['tag1','tag2','tag3'],
         
     };
+
+    constructor(){
+        super();
+        this.handleIncrement = this.handleIncrement.bind(this);
+    }
     render() {
         return (
         <div>    
@@ -21,7 +26,7 @@ class Counter extends Component {
     }
 
     handleIncrement(){
-        console.log('Increment Clicked');
+        console.log('Increment Clicked',this);
     }
     renderTags(){
         if(this.state.tags.length === 0) return <p>There are no tags</p>
