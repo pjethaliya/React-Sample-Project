@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Counter extends Component {
     state = {
-        count:1,
+        count:0,
         tags : ['tag1','tag2','tag3'],
         
     };
@@ -26,7 +26,7 @@ class Counter extends Component {
     }
 
     handleIncrement(){
-        console.log('Increment Clicked',this);
+        this.setState({count:this.state.count + 1 });
     }
     renderTags(){
         if(this.state.tags.length === 0) return <p>There are no tags</p>
